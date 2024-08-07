@@ -8,33 +8,33 @@ import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
 
 public class TopicSend {
-//	@SuppressWarnings("unchecked")
-//	public static void main(String[] args) {
-//		HttpClient client = HttpClient.newHttpClient();
-//		
-//		for(int i=0; i<5; i++) {
-//		
-//			HttpRequest request = HttpRequest.newBuilder()
-//					.uri(URI.create("http://192.168.5.246:8082/topics/rest_test"))
-//					.POST(BodyPublishers.ofString("{\"records\":[{\"key\":null,\"value\":\"rest_test\"}]}"))
-//					.header("Content-Type","application/vnd.kafka.json.v2+json")
-////					.header("Accept","application/vnd.kafka.v2+json, application/vnd.kafka+json, application/json")
-//					.build();
-//
-//
-//			try {
-//				HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
-//
-//				System.out.println(response.body());
-//			}catch (Exception e) {
-//				e.printStackTrace();
-//			}	
-//
-//		}
-//		
-//	}	
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args) {
+		HttpClient client = HttpClient.newHttpClient();
+		
+		for(int i=0; i<5; i++) {
+		
+			HttpRequest request = HttpRequest.newBuilder()
+					.uri(URI.create("http://192.168.5.246:8082/topics/rest_test"))
+					.POST(BodyPublishers.ofString("{\"records\":[{\"key\":null,\"value\":\"rest_test\"}]}"))
+					.header("Content-Type","application/vnd.kafka.json.v2+json")
+//					.header("Accept","application/vnd.kafka.v2+json, application/vnd.kafka+json, application/json")
+					.build();
+
+
+			try {
+				HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
+
+				System.out.println(response.body());
+			}catch (Exception e) {
+				e.printStackTrace();
+			}	
+
+		}
+		
+	}	
 	
-	//ï¿½ï¿½Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½×½ï¿½Æ®
+	//½ºÅ°¸¶ ·¹Áö½ºÆ®¸® Å×½ºÆ®
 //	@SuppressWarnings("unchecked")
 //	public static void main(String[] args) {
 //		Properties props = new Properties();
@@ -97,7 +97,7 @@ public class TopicSend {
 //			
 //			
 //			
-//			//Topic Send ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+//			//Topic Send µ¿±â¹æ½Ä ¿¹Á¦
 //			try (KafkaProducer<String, JsonValue> producer = new KafkaProducer<>(props);) {
 //
 //				Future<RecordMetadata> future = producer.send(record);
